@@ -24,7 +24,7 @@ h3 {
 
 .btn {
   font-size: 20px;
-  padding: 10px 10px;
+  padding: 10px;
   margin: 5px 15px;
   min-width: 100px;
   border: none;
@@ -80,4 +80,25 @@ h3 {
 .game-over {
   background-color: black;
   color: white;
+}
+
+@media only screen and (max-width: 420px) {
+  h1 {
+    font-size: 25px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 5px;
+    margin: 5px 10px;
+    min-width: 50px;
+  }
+
+  .result {
+    font-size: 16px;
+  }
 }
