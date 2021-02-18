@@ -29,7 +29,7 @@ Just run the index.html file & you're good to go.
 ## Features
 
 - Play against the computer
-- Play 5 rounds to decide the winner
+- First player to win 5 rounds wins
 - Responsive i.e. both mobile & desktop friendly
 
 ## Status
