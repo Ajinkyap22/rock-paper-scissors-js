@@ -2,7 +2,7 @@
 
 // VARIABLES
 
-const arr = ["rock", "paper", "scissor"];
+const arr = ["Rock", "Paper", "Scissors"];
 let playerScore = 0;
 let computerScore = 0;
 let choice;
@@ -27,44 +27,31 @@ function computerPlay() {
 function playRound(e) {
   // Get computer & user's play
   const computerChoice = computerPlay();
-  const userChoice = e.target.textContent.toLowerCase();
+  const userChoice = e.target.name;
 
-  if (userChoice === "rock 👊") {
-    if (computerChoice === "paper") {
-      computerScore++;
-      displayResults("You Lose! Paper beats Rock");
-      updateScore(computerScore, computerScoreLabel);
-    } else if (computerChoice === "rock") {
-      displayResults("It's a tie!");
-    } else {
-      playerScore++;
-      displayResults("You Win! Rock beats Scissor");
-      updateScore(playerScore, playerScoreLabel);
-    }
-  } else if (userChoice === "paper 🖐") {
-    if (computerChoice === "scissor") {
-      computerScore++;
-      displayResults("You Lose! Scissor beats Paper");
-      updateScore(computerScore, computerScoreLabel);
-    } else if (computerChoice === "paper") {
-      displayResults("It's a tie!");
-    } else {
-      playerScore++;
-      displayResults("You Win! Paper beats Rock");
-      updateScore(playerScore, playerScoreLabel);
-    }
-  } else if (userChoice === "scissor ✂") {
-    if (computerChoice === "rock") {
-      computerScore++;
-      displayResults("You Lose! Rock beats Scissor");
-      updateScore(computerScore, computerScoreLabel);
-    } else if (computerChoice === "scissor") {
-      displayResults("It's a tie!");
-    } else {
-      playerScore++;
-      displayResults("You Win! Scissor beats Paper");
-      updateScore(playerScore, playerScoreLabel);
-    }
+  if (computerChoice === userChoice) {
+    displayResults("It's a tie!");
+  } else if (
+    (computerChoice === "Rock" && userChoice === "Scissors") ||
+    (computerChoice === "Scissors" && userChoice === "Paper") ||
+    (computerChoice === "Paper" && userChoice === "Rock")
+  ) {
+    computerScore++;
+    // Grammer nazi stuff
+    displayResults(
+      `You Lose! ${computerChoice} ${
+        computerChoice === "Scissors" ? "beat" : "beats"
+      } ${userChoice}`
+    );
+    updateScore(computerScore, computerScoreLabel);
+  } else {
+    playerScore++;
+    displayResults(
+      `You Win! ${userChoice} ${
+        userChoice === "Scissors" ? "beat" : "beats"
+      } ${computerChoice}`
+    );
+    updateScore(playerScore, playerScoreLabel);
   }
 }
 

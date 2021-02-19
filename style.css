@@ -32,6 +32,7 @@ h3 {
   background-color: rgba(255, 68, 0, 0.85);
   color: white;
   outline: none;
+  cursor: pointer;
 }
 
 .btn:hover {
